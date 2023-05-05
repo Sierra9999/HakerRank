@@ -1,12 +1,16 @@
 function diagonalDifference(arr: number[][]): number {
-    let result: number = 0
+    let LeftToRight: number = 0
+    let RightToLeft: number = 0
+
+    let topRightCornerIndex = arr.length-1
 
     for(let o = 0; o < arr.length; o++){
-        console.log(arr[o][0])
+        LeftToRight += arr[o][o]
+        RightToLeft += arr[o][topRightCornerIndex]
+        topRightCornerIndex -= 1
     }
 
-
-    return result
+    return  RightToLeft - LeftToRight 
 }
 
 
